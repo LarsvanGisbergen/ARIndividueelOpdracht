@@ -2,30 +2,28 @@
 
 
 
-float rotation;
 
 Cube::Cube(glm::vec3 position, glm::vec4 color, int size) {
-	position[0] *= size;
 	_position = position;
 	_color = color;
-	rotation = 0.0f;
+	_rotation = 0.0f;
 	_size = size;
 }
 
 void Cube::update() {
 
-	if (rotation >= 2 * 3.14) {
-		rotation = 0.0f;
+	if (_rotation >= 2 * 3.14) {
+		_rotation = 0.0f;
 	}
-	rotation += 0.001f;
-	printf("current rotation: %f \n", rotation);
+	_rotation += 0.001f;
+	printf("current rotation: %f \n", _rotation);
 }
 
 void Cube::draw() {
 
 	glm::mat4 model = glm::mat4(1.0f);
 	model = glm::translate(model, _position);
-	model = glm::rotate(model, (float)rotation, glm::vec3(0, 1, 0));
+	model = glm::rotate(model, (float)_rotation, glm::vec3(0, 1, 0));
 	model = glm::scale(model, glm::vec3((float)_size, (float)_size, (float)_size));
 	tigl::shader->setModelMatrix(model);
 	tigl::begin(GL_QUADS);

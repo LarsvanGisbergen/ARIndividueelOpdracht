@@ -155,10 +155,14 @@
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp" />
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Pyramid.cpp" />
+    <ClCompile Include="Shape.cpp" />
     <ClCompile Include="tigl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="Pyramid.h" />
+    <ClInclude Include="Shape.h" />
     <ClInclude Include="tigl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

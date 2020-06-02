@@ -3,7 +3,7 @@
 #include "tigl.h"
 #include <glm/gtc/matrix_transform.hpp>
 #include "Cube.h"
-
+#include "Shape.h"
 #pragma comment(lib, "glfw3.lib")
 #pragma comment(lib, "glew32s.lib")
 #pragma comment(lib, "opengl32.lib")
@@ -13,7 +13,7 @@ void update();
 void init();
 void draw();
 GLFWwindow* window;
-Cube* chiemCube;
+Shape* test;
 glm::mat4 view;
 int main()
 {
@@ -29,8 +29,10 @@ int main()
 
 	tigl::init();
 
-	chiemCube = new Cube(glm::vec3(0,0,0), glm::vec4(1,0.5,0,1), 3);
+	
 
+	test = new Cube(glm::vec3(5, 0, 0), glm::vec4(0.5, 1, 0, 1), 3);
+	
 
 
 	while (!glfwWindowShouldClose(window))
@@ -56,7 +58,7 @@ void init()
 
 void update()
 {
-	chiemCube->update();
+	test->update();
 }
 
 void draw()
@@ -69,5 +71,5 @@ void draw()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	tigl::shader->enableColor(true);
 
-	chiemCube->draw();
+	test->draw();
 }
