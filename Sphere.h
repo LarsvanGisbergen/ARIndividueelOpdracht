@@ -5,8 +5,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "Shape.h"
 
-using tigl::Vertex;
-class Pyramid : public Shape
+class Sphere : public Shape
 {
 private:
 
@@ -16,8 +15,9 @@ private:
 	float _rotation;
 
 public:
+
 	//constructor
-	Pyramid(glm::vec3 position, glm::vec4 color, int size);
+	Sphere(glm::vec3 position, glm::vec4 color, int size);
 
 	//methodes
 	void update();
