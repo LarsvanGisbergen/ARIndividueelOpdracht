@@ -157,6 +157,7 @@
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Pyramid.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="ShapeFactory.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="tigl.cpp" />
   </ItemGroup>
@@ -164,6 +165,8 @@
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Pyramid.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="ShapeFactory.h" />
+    <ClInclude Include="Shapes.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="tigl.h" />
   </ItemGroup>

@@ -1,14 +1,2 @@
-﻿  Sphere.cpp
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(54,33): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(54,26): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(54,17): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(55,43): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(55,34): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(55,21): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(56,33): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(56,26): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(56,17): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(57,43): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(57,34): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Sphere.cpp(57,21): warning C4244:  'argument': conversion from 'double' to 'GLfloat', possible loss of data
+﻿  ShapeFactory.cpp
   ARIndividueel.vcxproj -> D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\Debug\ARIndividueel.exe

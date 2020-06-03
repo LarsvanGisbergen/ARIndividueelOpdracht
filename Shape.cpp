@@ -5,6 +5,7 @@
 void Shape::update()
 {
 	std::cout << "I am a shape" << std::endl;
+	
 }
 
 void Shape::draw()

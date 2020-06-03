@@ -13,6 +13,7 @@ Sphere::Sphere(glm::vec3 position, glm::vec4 color, int size)
 
 void Sphere::update()
 {
+
 	if (isGrowing && _size > 20) {
 		isGrowing = !isGrowing;
 	}
@@ -26,8 +27,6 @@ void Sphere::update()
 	else if (!isGrowing) {
 		_size -= 0.02;
 	}
-
-	std::cout << "size: " << _size << std::endl;
 }
 
 void Sphere::draw()

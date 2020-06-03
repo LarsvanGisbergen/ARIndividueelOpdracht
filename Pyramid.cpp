@@ -10,11 +10,7 @@ Pyramid::Pyramid(glm::vec3 position, glm::vec4 color, int size) {
 
 void Pyramid::update()
 {
-	if (_rotation >= 2 * 3.14) {
-		_rotation = 0.0f;
-	}
-	_rotation += 0.001f;
-	printf("current rotation: %f \n", _rotation);
+	
 }
 
 void Pyramid::draw()

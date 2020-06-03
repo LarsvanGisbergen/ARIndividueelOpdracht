@@ -2,10 +2,8 @@
 #include <GLFW/glfw3.h>
 #include "tigl.h"
 #include <glm/gtc/matrix_transform.hpp>
-#include "Cube.h"
-#include "Shape.h"
-#include "Pyramid.h"
-#include "Sphere.h"
+#include "Shapes.h"
+#include "ShapeFactory.h"
 #pragma comment(lib, "glfw3.lib")
 #pragma comment(lib, "glew32s.lib")
 #pragma comment(lib, "opengl32.lib")
@@ -20,6 +18,7 @@ void cameraInit();
 GLFWwindow* window;
 Shape* test;
 glm::mat4 view;
+ShapeFactory* factory;
 
 int width, height;
 int zoom, horizontal, vertical;
@@ -40,7 +39,9 @@ int main()
 	init();
 	
 
-	test = new Sphere(glm::vec3(5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3);
+	factory = new ShapeFactory();
+	factory->makeShape(glm::vec3(5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::CUBE);
+	
 	
 	
 
@@ -66,7 +67,7 @@ void init()
 
 void update()
 {
-	test->update();
+	factory->updateShapes();
 }
 
 void draw()
@@ -79,7 +80,7 @@ void draw()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	tigl::shader->enableColor(true);
 
-	test->draw();
+	factory->drawShapes();
 }
 
 
