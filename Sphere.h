@@ -5,14 +5,16 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "Shape.h"
 
+using tigl::Vertex;
 class Sphere : public Shape
 {
 private:
 
 	glm::vec3 _position;
 	glm::vec4 _color;
-	int _size;
+	double _size;
 	float _rotation;
+	bool isGrowing;
 
 public:
 

@@ -1,19 +1,33 @@
 #include "Sphere.h"
 #include <corecrt_math_defines.h>
 
-
-
+#include <iostream>
 Sphere::Sphere(glm::vec3 position, glm::vec4 color, int size)
 {
 	_position = position;
 	_color = color;
 	_rotation = 0.0f;
 	_size = size;
+	isGrowing = true;
 }
 
 void Sphere::update()
 {
-	
+	if (isGrowing && _size > 20) {
+		isGrowing = !isGrowing;
+	}
+	else if (!isGrowing && _size < 5) {
+		isGrowing = !isGrowing;
+	}
+
+	if (isGrowing) {
+		_size += 0.02;
+	}
+	else if (!isGrowing) {
+		_size -= 0.02;
+	}
+
+	std::cout << "size: " << _size << std::endl;
 }
 
 void Sphere::draw()
@@ -24,7 +38,7 @@ void Sphere::draw()
 	 
 
 	for (int i = 0; i <= lats; i++) {
-		double lat0 = M_PI * (-0.5 + (double)(i - 1) / lats);
+		double lat0 = M_PI * (-0.5 + (double)(i-1) / lats);
 		double z0 = sin(lat0);
 		double zr0 = cos(lat0);
 
@@ -34,10 +48,9 @@ void Sphere::draw()
 
 		glBegin(GL_QUAD_STRIP);
 		for (int j = 0; j <= longs; j++) {
-			double lng = 2 * M_PI * (double)(j - 1) / longs;
+			double lng = 2 * M_PI * (double)(j-1) / longs;
 			double x = cos(lng);
 			double y = sin(lng);
-
 			glNormal3f(x * zr0, y * zr0, z0);
 			glVertex3f(r * x * zr0, r * y * zr0, r * z0);
 			glNormal3f(x * zr1, y * zr1, z1);
@@ -56,3 +69,5 @@ glm::vec4 Sphere::getColor()
 {
 	return _color;
 }
+
+

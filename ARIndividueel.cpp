@@ -11,15 +11,18 @@
 #pragma comment(lib, "opengl32.lib")
 
 #include <iostream>
+//functions
 void update();
 void init();
 void draw();
+void cameraInit();
+//attributes
 GLFWwindow* window;
 Shape* test;
 glm::mat4 view;
 
 int width, height;
-int zoom, horizontal;
+int zoom, horizontal, vertical;
 
 int main()
 {
@@ -37,7 +40,7 @@ int main()
 	init();
 	
 
-	test = new Sphere(glm::vec3(5, 0, 0), glm::vec4(0.5, 1, 0, 1), 3);
+	test = new Sphere(glm::vec3(5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3);
 	
 	
 
@@ -57,24 +60,7 @@ int main()
 
 void init()
 {
-	zoom = 10;
-	horizontal = 10;
-	glEnable(GL_DEPTH_TEST);
-	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
-		{
-			if (key == GLFW_KEY_ESCAPE)
-				glfwSetWindowShouldClose(window, true);
-			if (key == GLFW_KEY_UP)
-				zoom -= 1;
-			if (key == GLFW_KEY_DOWN)
-				zoom += 1;
-			if (key == GLFW_KEY_LEFT)
-				horizontal -= 1;
-			if (key == GLFW_KEY_RIGHT)
-				horizontal += 1;
-		});
-
-	glfwGetWindowSize(window, &width, &height);
+	cameraInit();
 }
 
 
@@ -86,7 +72,7 @@ void update()
 void draw()
 {
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1400/(float)800, 0.1f, 100.0f);
-	view = glm::lookAt(glm::vec3(horizontal, 5, zoom), glm::vec3(horizontal, 0, 0), glm::vec3(0, 1, 0));
+	view = glm::lookAt(glm::vec3(horizontal, 5, zoom), glm::vec3(horizontal, vertical, 0), glm::vec3(0, 1, 0));
 	tigl::shader->setProjectionMatrix(projection);
 	tigl::shader->setViewMatrix(view);
 	glClearColor(0.3f, 0.4f, 0.6f, 1.0f);
@@ -94,4 +80,33 @@ void draw()
 	tigl::shader->enableColor(true);
 
 	test->draw();
+}
+
+
+void cameraInit() {
+	bool rotationMode = false;
+	zoom = 10;
+	horizontal = 10;
+	glEnable(GL_DEPTH_TEST);
+	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+		{
+			if (key == GLFW_KEY_S) {
+				zoom += 1;
+			}
+			if (key == GLFW_KEY_W) {
+				zoom -= 1;
+			}
+			if (key == GLFW_KEY_ESCAPE)
+				glfwSetWindowShouldClose(window, true);
+			if (key == GLFW_KEY_UP)
+				vertical += 1;
+			if (key == GLFW_KEY_DOWN)
+				vertical -= 1;
+			if (key == GLFW_KEY_LEFT)
+				horizontal -= 1;
+			if (key == GLFW_KEY_RIGHT)
+				horizontal += 1;
+		});
+
+	glfwGetWindowSize(window, &width, &height);
 }
