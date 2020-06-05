@@ -13,6 +13,7 @@ char* ModelFileReader::getStringData(ModelFactory::ModelType type)
 		while (stream.getline(line,10))
 		{
 			std::cout << line << '\n' << std::endl;
+			//TODO: regels werken alleen nu filteren op juiste type en data returnen
 		}
 		stream.close();
 	}
