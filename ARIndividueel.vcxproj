@@ -155,8 +155,9 @@
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp" />
     <ClCompile Include="Cube.cpp" />
-    <ClCompile Include="Model.cpp" />
     <ClCompile Include="ModelFactory.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelFileReader.cpp" />
     <ClCompile Include="ObjModel.cpp" />
     <ClCompile Include="Pyramid.cpp" />
     <ClCompile Include="Shape.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelFactory.h" />
+    <ClInclude Include="ModelFileReader.h" />
     <ClInclude Include="ObjModel.h" />
     <ClInclude Include="Pyramid.h" />
     <ClInclude Include="Shape.h" />

@@ -28,6 +28,15 @@
     <Filter Include="Header Files\shapeHeaders">
       <UniqueIdentifier>{7c4eae69-c9f2-4de5-a53f-801314895dc0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\FileIO">
+      <UniqueIdentifier>{41efb20e-a51a-40d2-8c80-2ddcea952900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FileIOHeaders">
+      <UniqueIdentifier>{38ab4b07-ab3e-4626-b5a5-4626cda9c448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factories">
+      <UniqueIdentifier>{6ba80041-0e6f-4e48-a7ae-f018e9353c65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp">
@@ -48,9 +57,6 @@
     <ClCompile Include="Sphere.cpp">
       <Filter>Source Files\Shapes</Filter>
     </ClCompile>
-    <ClCompile Include="ShapeFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ObjModel.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
@@ -61,7 +67,13 @@
       <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="ModelFactory.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelFileReader.cpp">
+      <Filter>Source Files\FileIO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="ModelFactory.h">
       <Filter>Header Files\modelHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelFileReader.h">
+      <Filter>Header Files\FileIOHeaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

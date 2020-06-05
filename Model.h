@@ -5,8 +5,9 @@ class Model
 {
 private:
 	//att
-	glm::vec3 _position;
 	ObjModel* _objModel;
+
+	glm::vec3 _position;
 	double _size;
 	//func
 	void setModelMatrix();

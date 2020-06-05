@@ -3,7 +3,7 @@
 class ModelFactory
 {
 public:
-	enum ModelType { SHIP, CAR };
+	enum ModelType { SHIP, CAR }; //let op de volgorde moet kloppen met de fileIO bestanden.
 	ModelFactory();
 	void makeModel(glm::vec3 position, int size, ModelType type);
 	Model* _model;

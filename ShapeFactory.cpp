@@ -31,6 +31,7 @@ void ShapeFactory::addShape(Shape* shape)
 
 void ShapeFactory::updateShapes() {
 	for (auto& shape : _shapes) {
+		if (shape != NULL)
 		shape->update();
 	}
 }
@@ -38,6 +39,7 @@ void ShapeFactory::updateShapes() {
 void ShapeFactory::drawShapes()
 {
 	for (auto& shape : _shapes) {
+		if (shape != NULL)
 		shape->draw();
 	}
 }

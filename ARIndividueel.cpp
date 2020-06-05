@@ -15,6 +15,7 @@
 #include <iostream>
 #include "Model.h"
 #include "ModelFactory.h"
+#include "ModelFileReader.h"
 //functions
 void update();
 void init();
@@ -27,8 +28,11 @@ glm::mat4 view;
 //factories
 ShapeFactory* shapeFactory;
 ModelFactory* modelFactory;
+
+//model stuff
 ObjModel* objModel;
 Model* model;
+ModelFileReader* reader;
 
 //values
 int width, height;
@@ -53,8 +57,10 @@ int main()
 
 	//factory = new ShapeFactory();
 	//factory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::SPHERE);
-	modelFactory = new ModelFactory();
-	modelFactory->makeModel(glm::vec3(0,0,0), 0.1, modelFactory->CAR);
+	//modelFactory = new ModelFactory();
+	//modelFactory->makeModel(glm::vec3(0,0,0), 0.1, modelFactory->CAR);
+	reader = new ModelFileReader();
+	reader->getStringData(ModelFactory::CAR);
 	
 	
 
@@ -83,7 +89,7 @@ void init()
 void update()
 {
 	//factory->updateShapes();
-	modelFactory->updateModel();
+	//modelFactory->updateModel();
 }
 
 void draw()
@@ -100,7 +106,7 @@ void draw()
 	tigl::shader->enableColor(true);
 
 	//factory->drawShapes();
-	modelFactory->drawModel();
+	//modelFactory->drawModel();
 }
 
 
