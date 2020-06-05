@@ -16,6 +16,7 @@
 #include "Model.h"
 #include "ModelFactory.h"
 #include "ModelFileReader.h"
+#include "enums.h"
 //functions
 void update();
 void init();
@@ -55,12 +56,12 @@ int main()
 	init();
 	
 
-	//factory = new ShapeFactory();
+	shapeFactory = new ShapeFactory();
 	//factory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::SPHERE);
-	//modelFactory = new ModelFactory();
-	//modelFactory->makeModel(glm::vec3(0,0,0), 0.1, modelFactory->CAR);
-	reader = new ModelFileReader();
-	reader->getStringData(ModelFactory::CAR);
+	modelFactory = new ModelFactory();
+	modelFactory->makeModel(glm::vec3(0, 0, 0), 0.1, SHIP);
+	
+	shapeFactory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, ShapeFactory::SPHERE);
 	
 	
 
@@ -88,8 +89,8 @@ void init()
 
 void update()
 {
-	//factory->updateShapes();
-	//modelFactory->updateModel();
+	shapeFactory->updateShapes();
+	modelFactory->updateModel();
 }
 
 void draw()
@@ -105,8 +106,8 @@ void draw()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	tigl::shader->enableColor(true);
 
-	//factory->drawShapes();
-	//modelFactory->drawModel();
+	shapeFactory->drawShapes();
+	modelFactory->drawModel();
 }
 
 

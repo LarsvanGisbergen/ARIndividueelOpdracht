@@ -4,25 +4,25 @@
 
 ModelFactory::ModelFactory()
 {
-	
+	_modelFileReader = new ModelFileReader();
 }
 
 void ModelFactory::makeModel(glm::vec3 position, int size, ModelType type)
 {
+	std::string data = "";
 	switch (type) {
 	
 	case SHIP:
 		//file io
-		std::cout << "making a ship" << std::endl;
-		//setModel(new Model(new ObjModel()));
+		data = _modelFileReader->getStringData(SHIP);
+		setModel(new Model(new ObjModel(data)));
 		break;
 
 	case CAR:
 		//file io
-		std::cout << "making a car" << std::endl;
-		//setModel(new Model(new ObjModel()));
-		break;
-	
+		data = _modelFileReader->getStringData(CAR);
+		setModel(new Model(new ObjModel(data)));
+		break;	
 	}
 }
 

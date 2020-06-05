@@ -14,7 +14,7 @@ Sphere::Sphere(glm::vec3 position, glm::vec4 color, int size)
 void Sphere::update()
 {
 
-	if (isGrowing && _size > 20) {
+	if (isGrowing && _size > 10) {
 		isGrowing = !isGrowing;
 	}
 	else if (!isGrowing && _size < 5) {
@@ -31,6 +31,12 @@ void Sphere::update()
 
 void Sphere::draw()
 {
+	glm::mat4 model = glm::mat4(1.0f);
+	model = glm::translate(model, _position);
+	model = glm::rotate(model, (float)_rotation, glm::vec3(0, 1, 0));
+	//model = glm::scale(model, glm::vec3((float)_size, (float)_size, (float)_size));
+	tigl::shader->setModelMatrix(model);
+
 	double r = _size / 2;
 	int lats = 25;
 	int longs = 25;

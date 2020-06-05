@@ -1,14 +1,20 @@
 #pragma once
 #include "Model.h"
+#include "ModelFileReader.h"
+#include "enums.h"
 class ModelFactory
 {
 public:
-	enum ModelType { SHIP, CAR }; //let op de volgorde moet kloppen met de fileIO bestanden.
+	
+	//atts
+	Model* _model;
+	ModelFileReader* _modelFileReader;
+	//funcs
 	ModelFactory();
 	void makeModel(glm::vec3 position, int size, ModelType type);
-	Model* _model;
 	void updateModel();
 	void drawModel();
+
 private:
 	void setModel(Model* shape);
 

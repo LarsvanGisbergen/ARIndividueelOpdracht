@@ -2,25 +2,41 @@
 #include "ModelFactory.h"
 #include <iostream>
 #include <string>
-char* ModelFileReader::getStringData(ModelFactory::ModelType type)
+#include "enums.h"
+
+
+
+ModelFileReader::ModelFileReader()
+{
+}
+
+std::string ModelFileReader::getStringData(ModelType type)
 {
 	std::ifstream stream = std::ifstream();
 	stream.open(_fileName); //model data textfile
-	
-	char* line = new char[10]{""};
+	char* line = new char[50]{""};
+	int length;
+	std::string stringData = "";
 	if (stream.is_open())
 	{
-		while (stream.getline(line,10))
+		while (stream.getline(line,50))
 		{
-			std::cout << line << '\n' << std::endl;
-			//TODO: regels werken alleen nu filteren op juiste type en data returnen
+			length = strlen(line);			
+			if (length != 0) {
+				if (line[0] - 48 == type) {
+					for (int i = 2; i < length; i++)
+					{
+						stringData += line[i];
+					}
+				}
+			}
 		}
 		stream.close();
 	}
 	
 	// TODO: insert return statement 
-	
-	return line;
+	std::cout << "stringdata: " << stringData << '\n' << std::endl;
+	return stringData;
 }
 
 

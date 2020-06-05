@@ -168,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="enums.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="ModelFileReader.h" />

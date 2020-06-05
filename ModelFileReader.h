@@ -1,14 +1,17 @@
 #pragma once
 #include <fstream>
-#include "ModelFactory.h"
+#include "enums.h"
 
-static class ModelFileReader
+class ModelFileReader
 {
 public:
-	char* getStringData(ModelFactory::ModelType type);
+	//ctor
+	ModelFileReader();
+	std::string getStringData(ModelType type);
 
 private:
 	const std::string& _fileName = "model_data.txt";
+
 };
 
 
