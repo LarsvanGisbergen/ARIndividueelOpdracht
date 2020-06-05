@@ -8,6 +8,7 @@ Cube::Cube(glm::vec3 position, glm::vec4 color, int size) {
 	_color = color;
 	_rotation = 0.0f;
 	_size = size;
+	
 }
 
 void Cube::update() {

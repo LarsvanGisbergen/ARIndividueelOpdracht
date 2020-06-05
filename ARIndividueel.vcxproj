@@ -155,19 +155,26 @@
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp" />
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ObjModel.cpp" />
     <ClCompile Include="Pyramid.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="ShapeFactory.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="tigl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ObjModel.h" />
     <ClInclude Include="Pyramid.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="ShapeFactory.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="tigl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

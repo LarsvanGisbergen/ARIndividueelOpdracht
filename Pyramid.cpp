@@ -21,24 +21,24 @@ void Pyramid::draw()
 	model = glm::scale(model, glm::vec3((float)_size, (float)_size, (float)_size));
 	tigl::shader->setModelMatrix(model);
 
-	glBegin(GL_TRIANGLES);
-	glColor3f(1.0f, 0.0f, 0.0f); glVertex3f(0.0f, 1.0f, 0.0f);
-	glColor3f(0.0f, 1.0f, 0.0f); glVertex3f(-1.0f, -1.0f, 1.0f);
-	glColor3f(0.0f, 0.0f, 1.0f); glVertex3f(1.0f, -1.0f, 1.0f);
+	tigl::begin(GL_TRIANGLES);
+	tigl::addVertex(Vertex::PC(glm::vec3(0, 1, 0), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
 
-	glColor3f(1.0f, 0.0f, 0.0f); glVertex3f(0.0f, 1.0f, 0.0f);
-	glColor3f(0.0f, 1.0f, 0.0f); glVertex3f(-1.0f, -1.0f, 1.0f);
-	glColor3f(0.0f, 0.0f, 1.0f); glVertex3f(0.0f, -1.0f, -1.0f);
+	tigl::addVertex(Vertex::PC(glm::vec3(0, 1, 0), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(0, -1, -1), _color));
 
-	glColor3f(1.0f, 0.0f, 0.0f); glVertex3f(0.0f, 1.0f, 0.0f);
-	glColor3f(0.0f, 1.0f, 0.0f); glVertex3f(0.0f, -1.0f, -1.0f);
-	glColor3f(0.0f, 0.0f, 1.0f); glVertex3f(1.0f, -1.0f, 1.0f);
+	tigl::addVertex(Vertex::PC(glm::vec3(0, 1, 0), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(0, -1, -1), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
 
-	glColor3f(1.0f, 0.0f, 0.0f); glVertex3f(-1.0f, -1.0f, 1.0f);
-	glColor3f(0.0f, 1.0f, 0.0f); glVertex3f(0.0f, -1.0f, -1.0f);
-	glColor3f(0.0f, 0.0f, 1.0f); glVertex3f(1.0f, -1.0f, 1.0f);
+	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(0, -1, -1), _color));
+	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
 
-	glEnd();
+	tigl::end();
 }
 
 glm::vec3 Pyramid::getPosition()

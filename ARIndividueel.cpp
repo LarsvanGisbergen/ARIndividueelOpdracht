@@ -1,14 +1,19 @@
+#pragma comment(lib, "glfw3.lib")
+#pragma comment(lib, "glew32s.lib")
+#pragma comment(lib, "opengl32.lib")
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "tigl.h"
 #include <glm/gtc/matrix_transform.hpp>
 #include "Shapes.h"
 #include "ShapeFactory.h"
-#pragma comment(lib, "glfw3.lib")
-#pragma comment(lib, "glew32s.lib")
-#pragma comment(lib, "opengl32.lib")
 
+#include "ObjModel.h"
+#include "stb_image.h"
+#include "Texture.h"
 #include <iostream>
+#include "Model.h"
 //functions
 void update();
 void init();
@@ -19,9 +24,12 @@ GLFWwindow* window;
 Shape* test;
 glm::mat4 view;
 ShapeFactory* factory;
+ObjModel* objModel;
+Model* model;
 
 int width, height;
 int zoom, horizontal, vertical;
+float rotation;
 
 int main()
 {
@@ -35,13 +43,15 @@ int main()
 	}
 	glfwMakeContextCurrent(window);
 
-	tigl::init();
+	
 	init();
 	
 
-	factory = new ShapeFactory();
-	factory->makeShape(glm::vec3(5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::CUBE);
+	//factory = new ShapeFactory();
+	//factory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::SPHERE);
+	objModel = new ObjModel("resources/ship/ship.obj");
 	
+	model = new Model(objModel);
 	
 	
 
@@ -61,26 +71,33 @@ int main()
 
 void init()
 {
+	tigl::init();
+	tigl::shader->enableTexture(true);
 	cameraInit();
 }
 
 
 void update()
 {
-	factory->updateShapes();
+	//factory->updateShapes();
+	model->update();
 }
 
 void draw()
 {
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1400/(float)800, 0.1f, 100.0f);
 	view = glm::lookAt(glm::vec3(horizontal, 5, zoom), glm::vec3(horizontal, vertical, 0), glm::vec3(0, 1, 0));
+	view = glm::rotate(view, (float)glm::radians(rotation), glm::vec3(0, 1, 0));
 	tigl::shader->setProjectionMatrix(projection);
 	tigl::shader->setViewMatrix(view);
+	
+	
 	glClearColor(0.3f, 0.4f, 0.6f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	tigl::shader->enableColor(true);
 
-	factory->drawShapes();
+	//factory->drawShapes();
+	model->draw();
 }
 
 
@@ -88,6 +105,7 @@ void cameraInit() {
 	bool rotationMode = false;
 	zoom = 10;
 	horizontal = 10;
+	rotation = 0.0f;
 	glEnable(GL_DEPTH_TEST);
 	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
@@ -96,6 +114,12 @@ void cameraInit() {
 			}
 			if (key == GLFW_KEY_W) {
 				zoom -= 1;
+			}
+			if (key == GLFW_KEY_A) {
+				rotation += 1;
+			}
+			if (key == GLFW_KEY_D) {
+				rotation -= 1;
 			}
 			if (key == GLFW_KEY_ESCAPE)
 				glfwSetWindowShouldClose(window, true);
