@@ -61,7 +61,7 @@ int main()
 	modelFactory = new ModelFactory();
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 0.1, SHIP);
 	
-	shapeFactory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, ShapeFactory::SPHERE);
+	shapeFactory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
 	
 	
 

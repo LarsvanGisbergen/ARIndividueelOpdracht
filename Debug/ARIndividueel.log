@@ -1,3 +1,5 @@
 ﻿  ARIndividueel.cpp
+  ShapeFactory.cpp
+  Generating Code...
 D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ARIndividueel.cpp(62,46): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
   ARIndividueel.vcxproj -> D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\Debug\ARIndividueel.exe
