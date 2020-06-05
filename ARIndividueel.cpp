@@ -14,6 +14,7 @@
 #include "Texture.h"
 #include <iostream>
 #include "Model.h"
+#include "ModelFactory.h"
 //functions
 void update();
 void init();
@@ -23,10 +24,13 @@ void cameraInit();
 GLFWwindow* window;
 Shape* test;
 glm::mat4 view;
-ShapeFactory* factory;
+//factories
+ShapeFactory* shapeFactory;
+ModelFactory* modelFactory;
 ObjModel* objModel;
 Model* model;
 
+//values
 int width, height;
 int zoom, horizontal, vertical;
 float rotation;
@@ -49,9 +53,8 @@ int main()
 
 	//factory = new ShapeFactory();
 	//factory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::SPHERE);
-	objModel = new ObjModel("resources/ship/ship.obj");
-	
-	model = new Model(objModel);
+	modelFactory = new ModelFactory();
+	modelFactory->makeModel(glm::vec3(0,0,0), 0.1, modelFactory->CAR);
 	
 	
 
@@ -80,7 +83,7 @@ void init()
 void update()
 {
 	//factory->updateShapes();
-	model->update();
+	modelFactory->updateModel();
 }
 
 void draw()
@@ -97,7 +100,7 @@ void draw()
 	tigl::shader->enableColor(true);
 
 	//factory->drawShapes();
-	model->draw();
+	modelFactory->drawModel();
 }
 
 

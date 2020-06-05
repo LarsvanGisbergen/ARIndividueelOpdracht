@@ -16,7 +16,7 @@ void Model::draw() {
 }
 
 void Model::update() {
-	_position[2] -= 0.11;
+	_position[2] -= 0.01;
 }
 
 void Model::setModelMatrix() {
