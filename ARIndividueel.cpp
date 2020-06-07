@@ -71,9 +71,9 @@ int main()
 	modelFactory = new ModelFactory(window);
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, SHIP);
 	
-	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, SPHERE);
+	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, CUBE);
 	//shapeFactory->makeShape(glm::vec3(-5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
-	gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
+	//gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
 	modelFactory->setGravityBuddy(gravityBuddy);
 	
 	
@@ -115,6 +115,14 @@ void draw()
 		freeCameraView = glm::rotate(freeCameraView, (float)glm::radians(rotation), glm::vec3(0, 1, 0));
 		tigl::shader->setProjectionMatrix(projection);
 		tigl::shader->setViewMatrix(freeCameraView);
+		tigl::shader->enableLighting(true);
+		tigl::shader->setLightCount(1);
+		tigl::shader->setLightDirectional(0, false);
+		tigl::shader->setLightPosition(0, glm::vec3(0, 20, modelFactory->_model->getPosition().z));
+		tigl::shader->setLightAmbient(0, glm::vec3(0.5f, 0.5f, 0.75f));
+		tigl::shader->setLightDiffuse(0, glm::vec3(0.5f, 0.5f, 0.5f));
+		tigl::shader->setLightSpecular(0, glm::vec3(0, 0, 0));
+		tigl::shader->setShinyness(32.0f);
 	}
 	else {
 		tigl::shader->setViewMatrix(modelFactory->_modelCameraView);

@@ -17,7 +17,6 @@ void Cube::update() {
 		_rotation = 0.0f;
 	}
 	_rotation += 0.001f;
-	printf("current rotation: %f \n", _rotation);
 }
 
 void Cube::draw() {
