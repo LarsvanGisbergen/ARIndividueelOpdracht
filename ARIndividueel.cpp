@@ -70,12 +70,13 @@ int main()
 	watch = new StopWatch();
 	shapeFactory = new ShapeFactory();
 	modelFactory = new ModelFactory(window);
-	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, SHIP);
-	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, CAR);
-	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, CUBE);
+	
+	modelFactory->makeModel(glm::vec3(0, 0, 0), 0.1, SHIP);
+	//modelFactory->makeModel(glm::vec3(0, 0, 0), 1, CAR);
+	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, PRISM);
 	//shapeFactory->makeShape(glm::vec3(-5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
 	//gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
-	modelFactory->setGravityBuddy(gravityBuddy);
+	//modelFactory->setGravityBuddy(gravityBuddy);
 	
 	
 

@@ -1,16 +1,31 @@
 #include "Pyramid.h"
+#include <iostream>
 
 
 Pyramid::Pyramid(glm::vec3 position, glm::vec4 color, int size) {
 	_position = position;
 	_color = color;
-	_rotation = 0.0f;
+	_rotation = 1.0f;
 	_size = size;
+	_isRotatingClockwise = true;
 }
 
 void Pyramid::update()
 {
-	
+	if (_isRotatingClockwise) {
+		if (_rotation <= 0) {
+			_isRotatingClockwise = !_isRotatingClockwise;
+		}
+		_rotation -= 0.01;
+	}
+	else {
+		if (_rotation >= 3) {
+			_isRotatingClockwise = !_isRotatingClockwise;
+		}
+		_rotation += 0.01;
+	}
+
+	std::cout << _rotation << std::endl;
 }
 
 void Pyramid::draw()

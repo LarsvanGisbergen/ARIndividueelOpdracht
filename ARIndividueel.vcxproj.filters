@@ -90,6 +90,9 @@
     <ClCompile Include="ModelFileWriter.cpp">
       <Filter>Source Files\FileIO</Filter>
     </ClCompile>
+    <ClCompile Include="Prism.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tigl.h">
@@ -142,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="ModelFileWriter.h">
       <Filter>Header Files\FileIOHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Prism.h">
+      <Filter>Header Files\shapeHeaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

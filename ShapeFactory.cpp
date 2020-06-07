@@ -24,6 +24,9 @@ void ShapeFactory::makeShape(glm::vec3 position, glm::vec4 color, int size, Shap
 		case PYRAMID:
 			addShape(new Pyramid(position, color, size));
 			break;
+		case PRISM:
+			addShape(new Prism(position, color, size));
+			break;
 	}
 }
 

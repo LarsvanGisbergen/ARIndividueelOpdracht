@@ -161,6 +161,7 @@
     <ClCompile Include="ModelFileReader.cpp" />
     <ClCompile Include="ModelFileWriter.cpp" />
     <ClCompile Include="ObjModel.cpp" />
+    <ClCompile Include="Prism.cpp" />
     <ClCompile Include="Pyramid.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="ShapeFactory.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="ModelFileReader.h" />
     <ClInclude Include="ModelFileWriter.h" />
     <ClInclude Include="ObjModel.h" />
+    <ClInclude Include="Prism.h" />
     <ClInclude Include="Pyramid.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="ShapeFactory.h" />

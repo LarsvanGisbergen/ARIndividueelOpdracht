@@ -14,7 +14,7 @@ private:
 	glm::vec4 _color;
 	int _size;
 	float _rotation;
-
+	bool _isRotatingClockwise;
 public:
 	//constructor
 	Pyramid(glm::vec3 position, glm::vec4 color, int size);
