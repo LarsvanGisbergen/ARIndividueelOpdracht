@@ -12,15 +12,27 @@ std::vector<double> GravityBuddy::getDeltas(Model* model) {
 	for (Sphere sphere : _blackHoles) {
 		//translate coords to force of attraction based on size
 		glm::vec3 currentCoords = sphere.getPosition();
+		glm::vec3 tempCoords{0};
 		
 		double distanceX = modelPosition.x - currentCoords.x;
+		
 		double distanceZ = modelPosition.z - currentCoords.z;
-		if (distanceX != 0 || distanceZ != 0) {
-			currentCoords.x += ((double)sphere.getSize() / distanceX);
-			currentCoords.z += ((double)sphere.getSize() / distanceZ);
+		if ((int)distanceX == 0 && (int)distanceZ == 0) {
+			return deltas;
+		}
+		else if (distanceX == (int)0) {
+			tempCoords.z += ((double)sphere.getSize() / distanceZ);
+		}
+		else if (distanceZ == (int)0) {
+			tempCoords.x += ((double)sphere.getSize() / distanceX);
+		}
+		else {
+	
+			tempCoords.z += ((double)sphere.getSize() / distanceZ);
+			tempCoords.x += ((double)sphere.getSize() / distanceX);
 		}
 			
-			coords.push_back(currentCoords);
+			coords.push_back(tempCoords);
 		
 		//vector now has values based on size and distance
 	}
@@ -33,13 +45,13 @@ std::vector<double> GravityBuddy::getDeltas(Model* model) {
 	for (int i = 0; i < size(coords); i++)
 	{
 		//make one vector out of all others
-		dx += coords.at(i).x;
-		dz += coords.at(i).z;
+		dx += -coords.at(i).x;
+		dz += -coords.at(i).z;
 	}
 
 	//set deltas to resultant vector values
-	deltas[0] = dx /1000;
-	deltas[1] = dz /1000;
+	deltas[0] = dx /100;
+	deltas[1] = dz /100;
 	
 	return deltas;
 }

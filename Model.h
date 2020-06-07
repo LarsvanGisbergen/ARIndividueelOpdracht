@@ -31,6 +31,7 @@ public:
 	void setDeltaX(double dx);
 	void setDeltaZ(double dz);
 	glm::vec3 getPosition();
+	void setPosition(glm::vec3 position);
 	float getRotation();
 };
 

@@ -1,2 +1,23 @@
-﻿  ARIndividueel.cpp
+﻿  GravityBuddy.cpp
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(24,58): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(24,58): warning C4244:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(24,58): warning C4244:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(24,58): warning C4244:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(24,58): warning C4244:         ]
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(27,58): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(27,58): warning C4244:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(27,58): warning C4244:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(27,58): warning C4244:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(27,58): warning C4244:         ]
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(31,58): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(31,58): warning C4244:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(31,58): warning C4244:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(31,58): warning C4244:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(31,58): warning C4244:         ]
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(32,58): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(32,58): warning C4244:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(32,58): warning C4244:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(32,58): warning C4244:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(32,58): warning C4244:         ]
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(45,20): warning C4018:  '<': signed/unsigned mismatch
   ARIndividueel.vcxproj -> D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\Debug\ARIndividueel.exe

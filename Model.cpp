@@ -20,6 +20,7 @@ void Model::draw() {
 void Model::update() {
 	_position[0] += (_deltaX +_inputVelocityX);
 	_position[2] += (_deltaZ + _inputVelocityZ);
+	std::cout << _position[0] << " : " << _position[2] << std::endl;
 	
 }
 
@@ -36,6 +37,11 @@ void Model::setDeltaZ(double dz)
 glm::vec3 Model::getPosition()
 {
 	return _position;
+}
+
+void Model::setPosition(glm::vec3 position)
+{
+	_position = position;
 }
 
 float Model::getRotation()

@@ -69,10 +69,10 @@ int main()
 	watch = new StopWatch();
 	shapeFactory = new ShapeFactory();
 	modelFactory = new ModelFactory();
-	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, SHIP);
+	modelFactory->makeModel(glm::vec3(0, 0, 5), 1, SHIP);
 	
-	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, SPHERE);
-	//shapeFactory->makeShape(glm::vec3(-5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
+	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 3, SPHERE);
+	shapeFactory->makeShape(glm::vec3(-10, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 5, SPHERE);
 	gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
 	modelFactory->setGravityBuddy(gravityBuddy);
 	
@@ -132,7 +132,7 @@ void draw()
 
 void cameraInit() {
 	bool rotationMode = false;
-	zoom = 10;
+	zoom = 50;
 	horizontal = 10;
 	rotation = 0.0f;
 	glEnable(GL_DEPTH_TEST);

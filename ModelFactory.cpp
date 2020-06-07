@@ -10,6 +10,7 @@ ModelFactory::ModelFactory()
 
 void ModelFactory::makeModel(glm::vec3 position, int size, ModelType type)
 {
+	
 	std::string data = "";
 	switch (type) {
 	
@@ -17,12 +18,14 @@ void ModelFactory::makeModel(glm::vec3 position, int size, ModelType type)
 		//file io
 		data = _modelFileReader->getStringData(SHIP);
 		setModel(new Model(new ObjModel(data)));
+		_model->setPosition(position);
 		break;
 
 	case CAR:
 		//file io
 		data = _modelFileReader->getStringData(CAR);
 		setModel(new Model(new ObjModel(data)));
+		_model->setPosition(position);
 		break;	
 	}
 }
