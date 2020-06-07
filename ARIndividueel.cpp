@@ -89,7 +89,8 @@ int main()
 	}
 
 	glfwTerminate();
-
+	// delete all pointers before closing application
+	delete shapeFactory, modelFactory, objModel, model, reader, gravityBuddy;
 
 	return 0;
 }
@@ -185,6 +186,4 @@ void switchCam()
 		modelFactory->camIsActive = !modelFactory->camIsActive;
 		watch->start();
 	}
-
-
 }

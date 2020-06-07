@@ -5,6 +5,11 @@ ShapeFactory::ShapeFactory()
 
 }
 
+ShapeFactory::~ShapeFactory()
+{
+	
+}
+
 void ShapeFactory::makeShape(glm::vec3 position, glm::vec4 color, int size, ShapeType type)
 {
 	switch (type) {
@@ -51,5 +56,4 @@ std::vector<Sphere> ShapeFactory::getSpheres()
 	}
 	
 	return spheres;
-	//return spheres;
 }

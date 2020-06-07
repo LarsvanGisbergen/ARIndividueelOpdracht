@@ -10,6 +10,11 @@ ModelFactory::ModelFactory(GLFWwindow* window)
 	
 }
 
+ModelFactory::~ModelFactory()
+{
+	delete _modelFileReader;
+}
+
 void ModelFactory::makeModel(glm::vec3 position, int size, ModelType type)
 {
 	std::string data = "";
@@ -30,6 +35,7 @@ void ModelFactory::makeModel(glm::vec3 position, int size, ModelType type)
 		writer->saveModelType(type);
 		break;	
 	}
+	delete writer;
 }
 
 void ModelFactory::setModel(Model* model)
@@ -86,3 +92,4 @@ void ModelFactory::setGravityBuddy(GravityBuddy* gravityBuddy)
 {
 	_gravityBuddy = gravityBuddy;
 }
+

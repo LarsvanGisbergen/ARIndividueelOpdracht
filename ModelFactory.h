@@ -16,6 +16,7 @@ public:
 	bool camIsActive;
 	//funcs
 	ModelFactory(GLFWwindow* window);
+	~ModelFactory();
 	void makeModel(glm::vec3 position, int size, ModelType type);
 	void updateModel();
 	void drawModel();

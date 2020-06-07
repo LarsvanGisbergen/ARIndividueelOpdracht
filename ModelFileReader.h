@@ -7,6 +7,7 @@ class ModelFileReader
 public:
 	//ctor
 	ModelFileReader();
+	
 	std::string getStringData(ModelType type);
 
 private:

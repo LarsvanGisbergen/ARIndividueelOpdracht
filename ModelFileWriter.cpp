@@ -21,12 +21,12 @@ void ModelFileWriter::saveModelType(ModelType type)
 
 	switch (type) {
 	case CAR:	
-		strftime(date_string, 50, "CAR: %B %d, %Y" , curr_tm);
+		strftime(date_string, 50, "CAR added on: %B %d, %Y" , curr_tm);
 		outfile << date_string << std::endl;
 		break;
 
 	case SHIP:	
-		strftime(date_string, 50, "SHIP: %B %d, %Y", curr_tm);
+		strftime(date_string, 50, "SHIP added on: %B %d, %Y", curr_tm);
 		outfile << date_string << std::endl;
 		break;
 
