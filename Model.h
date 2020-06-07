@@ -11,11 +11,20 @@ private:
 	double _size;
 	//func
 	void setModelMatrix();
+
+	//additional info for update
+	int _deltaX;
+	int _deltaY;
 public:
 	//ctor
 	Model(ObjModel* objModel);
 
 	void draw();
 	void update();
+
+	//extra
+	void setDeltaX(int dx);
+	void setDeltaY(int dy);
+	glm::vec3 getPosition();
 };
 

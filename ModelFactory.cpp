@@ -32,12 +32,22 @@ void ModelFactory::setModel(Model* model)
 }
 
 void ModelFactory::updateModel() {
-	if(_model != NULL)
-	_model->update();
+	if (_model) {
+		//get deltas from gravitybuddy if exists
+		std::vector<double> deltas = _gravityBuddy->getDeltas(_model);
+		_model->setDeltaX(deltas[0]);
+		_model->setDeltaY(deltas[1]);
+		_model->update();
+	}
 }
 
 void ModelFactory::drawModel()
 {	
-	if (_model != NULL)
+	if (_model)
 	_model->draw();	
+}
+
+void ModelFactory::setGravityBuddy(GravityBuddy* gravityBuddy)
+{
+	_gravityBuddy = gravityBuddy;
 }

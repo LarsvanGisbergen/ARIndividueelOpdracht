@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp" />
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="GravityBuddy.cpp" />
     <ClCompile Include="ModelFactory.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ModelFileReader.cpp" />
@@ -169,6 +170,7 @@
   <ItemGroup>
     <ClInclude Include="Cube.h" />
     <ClInclude Include="enums.h" />
+    <ClInclude Include="GravityBuddy.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="ModelFileReader.h" />

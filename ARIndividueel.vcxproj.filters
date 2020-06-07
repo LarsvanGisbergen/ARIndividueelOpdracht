@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Factories">
       <UniqueIdentifier>{6ba80041-0e6f-4e48-a7ae-f018e9353c65}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Physics">
+      <UniqueIdentifier>{17ca6b84-51e6-4ffa-bc88-d4eb0ddfd4cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="ModelFileReader.cpp">
       <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="GravityBuddy.cpp">
+      <Filter>Source Files\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +123,9 @@
       <Filter>Header Files\FileIOHeaders</Filter>
     </ClInclude>
     <ClInclude Include="enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GravityBuddy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

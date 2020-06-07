@@ -17,6 +17,7 @@
 #include "ModelFactory.h"
 #include "ModelFileReader.h"
 #include "enums.h"
+#include "GravityBuddy.h"
 //functions
 void update();
 void init();
@@ -34,6 +35,9 @@ ModelFactory* modelFactory;
 ObjModel* objModel;
 Model* model;
 ModelFileReader* reader;
+
+//physics
+GravityBuddy* gravityBuddy;
 
 //values
 int width, height;
@@ -57,13 +61,16 @@ int main()
 	
 
 	shapeFactory = new ShapeFactory();
-	//factory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 0.3), 3, ShapeFactory::SPHERE);
 	modelFactory = new ModelFactory();
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 0.1, SHIP);
 	
-	shapeFactory->makeShape(glm::vec3(0, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
+	shapeFactory->makeShape(glm::vec3(10, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
+	shapeFactory->makeShape(glm::vec3(-5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
+	gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
+	modelFactory->setGravityBuddy(gravityBuddy);
 	
 	
+
 
 	while (!glfwWindowShouldClose(window))
 	{

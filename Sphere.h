@@ -26,5 +26,6 @@ public:
 	void draw();
 	glm::vec3 getPosition();
 	glm::vec4 getColor();
+	double getSize();
 };
 

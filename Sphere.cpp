@@ -14,18 +14,18 @@ Sphere::Sphere(glm::vec3 position, glm::vec4 color, int size)
 void Sphere::update()
 {
 
-	if (isGrowing && _size > 10) {
+	if (isGrowing && _size > 6) {
 		isGrowing = !isGrowing;
 	}
-	else if (!isGrowing && _size < 5) {
+	else if (!isGrowing && _size < 5.5) {
 		isGrowing = !isGrowing;
 	}
 
 	if (isGrowing) {
-		_size += 0.02;
+		_size += 0.005;
 	}
 	else if (!isGrowing) {
-		_size -= 0.02;
+		_size -= 0.005;
 	}
 }
 
@@ -74,6 +74,11 @@ glm::vec3 Sphere::getPosition()
 glm::vec4 Sphere::getColor()
 {
 	return _color;
+}
+
+double Sphere::getSize()
+{
+	return _size;
 }
 
 

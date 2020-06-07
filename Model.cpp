@@ -16,7 +16,23 @@ void Model::draw() {
 }
 
 void Model::update() {
-	_position[2] -= 0.01;
+	_position[2] -= _deltaY;
+	_position[0] -= _deltaX;
+}
+
+void Model::setDeltaX(int dx)
+{
+	_deltaX = dx;
+}
+
+void Model::setDeltaY(int dy)
+{
+	_deltaY = dy;
+}
+
+glm::vec3 Model::getPosition()
+{
+	return _position;
 }
 
 void Model::setModelMatrix() {
@@ -26,3 +42,5 @@ void Model::setModelMatrix() {
 	model = glm::scale(model, glm::vec3(_size, _size, _size)); // in vec3 is size
 	tigl::shader->setModelMatrix(model);
 }
+
+
