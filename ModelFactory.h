@@ -10,6 +10,8 @@ public:
 	//atts
 	Model* _model;
 	ModelFileReader* _modelFileReader;
+	glm::mat4 _modelCameraView;
+	bool camIsActive;
 	//funcs
 	ModelFactory();
 	void makeModel(glm::vec3 position, int size, ModelType type);

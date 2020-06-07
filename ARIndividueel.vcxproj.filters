@@ -40,6 +40,9 @@
     <Filter Include="Source Files\Physics">
       <UniqueIdentifier>{17ca6b84-51e6-4ffa-bc88-d4eb0ddfd4cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{f444ea49-b817-46ec-914f-510132256d9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ARIndividueel.cpp">
@@ -80,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="GravityBuddy.cpp">
       <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="StopWatch.cpp">
+      <Filter>Source Files\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GravityBuddy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StopWatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

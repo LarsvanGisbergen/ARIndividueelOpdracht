@@ -18,15 +18,21 @@
 #include "ModelFileReader.h"
 #include "enums.h"
 #include "GravityBuddy.h"
+#include "StopWatch.h"
 //functions
 void update();
 void init();
 void draw();
 void cameraInit();
+void switchCam();
 //attributes
 GLFWwindow* window;
 Shape* test;
-glm::mat4 view;
+glm::mat4 freeCameraView;
+StopWatch* watch;
+
+bool camIsFree;
+
 //factories
 ShapeFactory* shapeFactory;
 ModelFactory* modelFactory;
@@ -59,7 +65,8 @@ int main()
 	
 	init();
 	
-
+	camIsFree = true;
+	watch = new StopWatch();
 	shapeFactory = new ShapeFactory();
 	modelFactory = new ModelFactory();
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, SHIP);
@@ -102,12 +109,17 @@ void update()
 
 void draw()
 {
-	glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1400/(float)800, 0.1f, 100.0f);
-	view = glm::lookAt(glm::vec3(horizontal, 5, zoom), glm::vec3(horizontal, vertical, 0), glm::vec3(0, 1, 0));
-	view = glm::rotate(view, (float)glm::radians(rotation), glm::vec3(0, 1, 0));
-	tigl::shader->setProjectionMatrix(projection);
-	tigl::shader->setViewMatrix(view);
-	
+	if (camIsFree) {
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1400 / (float)800, 0.1f, 100.0f);
+		freeCameraView = glm::lookAt(glm::vec3(horizontal, 5, zoom), glm::vec3(horizontal, vertical, 0), glm::vec3(0, 1, 0));
+		freeCameraView = glm::rotate(freeCameraView, (float)glm::radians(rotation), glm::vec3(0, 1, 0));
+		tigl::shader->setProjectionMatrix(projection);
+		tigl::shader->setViewMatrix(freeCameraView);
+	}
+	else {
+		tigl::shader->setViewMatrix(modelFactory->_modelCameraView);
+	}
+
 	
 	glClearColor(0.3f, 0.4f, 0.6f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -126,6 +138,9 @@ void cameraInit() {
 	glEnable(GL_DEPTH_TEST);
 	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
+			if (key == GLFW_KEY_TAB) {
+				switchCam();
+			}
 			if (key == GLFW_KEY_S) {
 				zoom += 1;
 			}
@@ -151,4 +166,16 @@ void cameraInit() {
 		});
 
 	glfwGetWindowSize(window, &width, &height);
+}
+
+void switchCam()
+{
+	watch->stop();
+	if (watch->getElapsedTime() > 1000) {
+		camIsFree = !camIsFree;
+		modelFactory->camIsActive = !modelFactory->camIsActive;
+		watch->start();
+	}
+
+
 }

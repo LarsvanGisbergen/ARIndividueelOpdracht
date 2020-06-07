@@ -164,6 +164,7 @@
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="ShapeFactory.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="StopWatch.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="tigl.cpp" />
   </ItemGroup>
@@ -181,6 +182,7 @@
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="StopWatch.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="tigl.h" />
   </ItemGroup>

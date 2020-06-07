@@ -14,7 +14,12 @@ private:
 
 	//additional info for update
 	double _deltaX;
-	double _deltaY;
+	double _deltaZ;
+
+	double _inputVelocityX;
+	double _inputVelocityZ;
+
+	float _rotation;
 public:
 	//ctor
 	Model(ObjModel* objModel);
@@ -24,7 +29,8 @@ public:
 
 	//extra
 	void setDeltaX(double dx);
-	void setDeltaY(double dy);
+	void setDeltaZ(double dz);
 	glm::vec3 getPosition();
+	float getRotation();
 };
 
