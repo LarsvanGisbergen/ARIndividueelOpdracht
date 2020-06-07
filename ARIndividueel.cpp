@@ -19,6 +19,7 @@
 #include "enums.h"
 #include "GravityBuddy.h"
 #include "StopWatch.h"
+#include "ModelFileWriter.h"
 //functions
 void update();
 void init();

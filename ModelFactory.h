@@ -3,6 +3,7 @@
 #include "ModelFileReader.h"
 #include "enums.h"
 #include "GravityBuddy.h"
+#include "ModelFileWriter.h"
 class ModelFactory
 {
 public:

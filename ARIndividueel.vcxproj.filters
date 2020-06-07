@@ -87,6 +87,9 @@
     <ClCompile Include="StopWatch.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
+    <ClCompile Include="ModelFileWriter.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tigl.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="StopWatch.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelFileWriter.h">
+      <Filter>Header Files\FileIOHeaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

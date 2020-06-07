@@ -13,18 +13,21 @@ ModelFactory::ModelFactory(GLFWwindow* window)
 void ModelFactory::makeModel(glm::vec3 position, int size, ModelType type)
 {
 	std::string data = "";
+	ModelFileWriter* writer = new ModelFileWriter();
 	switch (type) {
-	
+		
 	case SHIP:
 		//file io
-		data = _modelFileReader->getStringData(SHIP);
-		setModel(new Model(new ObjModel(data)));
+		data = _modelFileReader->getStringData(type);
+		setModel(new Model(new ObjModel(data)));	
+		writer->saveModelType(type);
 		break;
 
 	case CAR:
 		//file io
-		data = _modelFileReader->getStringData(CAR);
+		data = _modelFileReader->getStringData(type);
 		setModel(new Model(new ObjModel(data)));
+		writer->saveModelType(type);
 		break;	
 	}
 }

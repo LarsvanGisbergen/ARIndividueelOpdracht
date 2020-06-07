@@ -159,6 +159,7 @@
     <ClCompile Include="ModelFactory.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ModelFileReader.cpp" />
+    <ClCompile Include="ModelFileWriter.cpp" />
     <ClCompile Include="ObjModel.cpp" />
     <ClCompile Include="Pyramid.cpp" />
     <ClCompile Include="Shape.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="ModelFileReader.h" />
+    <ClInclude Include="ModelFileWriter.h" />
     <ClInclude Include="ObjModel.h" />
     <ClInclude Include="Pyramid.h" />
     <ClInclude Include="Shape.h" />
