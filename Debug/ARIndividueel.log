@@ -1,2 +1,32 @@
-﻿  Prism.cpp
+﻿  ARIndividueel.cpp
+  GravityBuddy.cpp
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ARIndividueel.cpp(74,46): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(19,61): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(19,61): warning C4244:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(19,61): warning C4244:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(19,61): warning C4244:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(19,61): warning C4244:         ]
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(20,61): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(20,61): warning C4244:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(20,61): warning C4244:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(20,61): warning C4244:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(20,61): warning C4244:         ]
+  ModelFactory.cpp
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\GravityBuddy.cpp(33,20): warning C4018:  '<': signed/unsigned mismatch
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ModelFactory.cpp(58,47): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+  ModelFileReader.cpp
+  ModelFileWriter.cpp
+  Prism.cpp
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ModelFactory.cpp(60,47): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(16,21): warning C4305:  '+=': truncation from 'double' to 'T'
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(16,21): warning C4305:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(16,21): warning C4305:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(16,21): warning C4305:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(16,21): warning C4305:         ]
+  Generating Code...
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(22,21): warning C4305:  '-=': truncation from 'double' to 'T'
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(22,21): warning C4305:         with
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(22,21): warning C4305:         [
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(22,21): warning C4305:             T=float
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\Prism.cpp(22,21): warning C4305:         ]
   ARIndividueel.vcxproj -> D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\Debug\ARIndividueel.exe

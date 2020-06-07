@@ -7,10 +7,23 @@ Prism::Prism(glm::vec3 position, glm::vec4 color, int size)
 	_color = color;
 	_rotation = 0.0f;
 	_size = size;
+	_canIncreaseColor = true;
 }
 
 void Prism::update()
 {
+	if (_canIncreaseColor) {
+		_color[0] += 0.001;
+		if (_color[0] >= 1) {
+			_canIncreaseColor = !_canIncreaseColor;
+		}
+	}
+	else {
+		_color[0] -= 0.001;
+		if (_color[0] <= 0) {
+			_canIncreaseColor = !_canIncreaseColor;
+		}
+	}
 }
 
 void Prism::draw()
