@@ -16,8 +16,7 @@ private:
 	double _deltaX;
 	double _deltaZ;
 
-	double _inputVelocityX;
-	double _inputVelocityZ;
+	
 
 	float _rotation;
 public:
@@ -30,7 +29,13 @@ public:
 	//extra
 	void setDeltaX(double dx);
 	void setDeltaZ(double dz);
+	void setInputVelocityX(double vel);
+	void setInputVelocityZ(double vel);
 	glm::vec3 getPosition();
+	void setRotation(float rot);
 	float getRotation();
+	//atts
+	double _inputVelocityX;
+	double _inputVelocityZ;
 };
 

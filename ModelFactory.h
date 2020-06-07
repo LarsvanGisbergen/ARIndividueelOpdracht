@@ -9,11 +9,12 @@ public:
 	
 	//atts
 	Model* _model;
+	GLFWwindow* _window;
 	ModelFileReader* _modelFileReader;
 	glm::mat4 _modelCameraView;
 	bool camIsActive;
 	//funcs
-	ModelFactory();
+	ModelFactory(GLFWwindow* window);
 	void makeModel(glm::vec3 position, int size, ModelType type);
 	void updateModel();
 	void drawModel();

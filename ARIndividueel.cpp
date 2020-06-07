@@ -68,7 +68,7 @@ int main()
 	camIsFree = true;
 	watch = new StopWatch();
 	shapeFactory = new ShapeFactory();
-	modelFactory = new ModelFactory();
+	modelFactory = new ModelFactory(window);
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, SHIP);
 	
 	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, SPHERE);

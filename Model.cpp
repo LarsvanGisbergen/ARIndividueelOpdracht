@@ -8,7 +8,9 @@ Model::Model(ObjModel* objModel) {
 	_position = glm::vec3{ 0,0,0 };
 	_size = 0.1; //standard size
 	_objModel = objModel;
-	_rotation = 0.0f;
+	_rotation = 90.0f; //
+	_inputVelocityX = 0;
+	_inputVelocityZ = 0;
 }
 
 
@@ -33,9 +35,24 @@ void Model::setDeltaZ(double dz)
 	_deltaZ = dz;
 }
 
+void Model::setInputVelocityX(double vel)
+{
+	_inputVelocityX = vel;
+}
+
+void Model::setInputVelocityZ(double vel)
+{
+	_inputVelocityZ = vel;
+}
+
 glm::vec3 Model::getPosition()
 {
 	return _position;
+}
+
+void Model::setRotation(float rot)
+{
+	_rotation = rot;
 }
 
 float Model::getRotation()

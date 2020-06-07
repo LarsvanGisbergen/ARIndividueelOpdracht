@@ -1,2 +1,4 @@
-﻿  ARIndividueel.cpp
+﻿  ModelFactory.cpp
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ModelFactory.cpp(47,47): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ModelFactory.cpp(49,47): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
   ARIndividueel.vcxproj -> D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\Debug\ARIndividueel.exe
