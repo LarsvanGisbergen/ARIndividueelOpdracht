@@ -64,7 +64,7 @@ int main()
 	modelFactory = new ModelFactory();
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 1, SHIP);
 	
-	shapeFactory->makeShape(glm::vec3(5,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, SPHERE);
+	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, SPHERE);
 	//shapeFactory->makeShape(glm::vec3(-5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
 	gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
 	modelFactory->setGravityBuddy(gravityBuddy);

@@ -13,10 +13,13 @@ std::vector<double> GravityBuddy::getDeltas(Model* model) {
 		//translate coords to force of attraction based on size
 		glm::vec3 currentCoords = sphere.getPosition();
 		
-		double distance = std::sqrt(std::pow((modelPosition[0] - currentCoords[0]), 2) + std::pow((modelPosition[2] - currentCoords[2]), 2));
-		
-			currentCoords.x += ((double)sphere.getSize() / distance);
-			currentCoords.z += ((double)sphere.getSize() / distance);
+		double distanceX = modelPosition.x - currentCoords.x;
+		double distanceZ = modelPosition.z - currentCoords.z;
+		if (distanceX != 0 || distanceZ != 0) {
+			currentCoords.x += ((double)sphere.getSize() / distanceX);
+			currentCoords.z += ((double)sphere.getSize() / distanceZ);
+		}
+			
 			coords.push_back(currentCoords);
 		
 		//vector now has values based on size and distance
