@@ -113,11 +113,13 @@ void update()
 void draw()
 {
 	if (camIsFree) {
+		//camera
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), 1400 / (float)800, 0.1f, 100.0f);
 		freeCameraView = glm::lookAt(glm::vec3(horizontal, 5, zoom), glm::vec3(horizontal, vertical, 0), glm::vec3(0, 1, 0));
 		freeCameraView = glm::rotate(freeCameraView, (float)glm::radians(rotation), glm::vec3(0, 1, 0));
 		tigl::shader->setProjectionMatrix(projection);
 		tigl::shader->setViewMatrix(freeCameraView);
+		//light
 		tigl::shader->enableLighting(true);
 		tigl::shader->setLightCount(1);
 		tigl::shader->setLightDirectional(0, false);
@@ -126,6 +128,9 @@ void draw()
 		tigl::shader->setLightDiffuse(0, glm::vec3(0.5f, 0.5f, 0.5f));
 		tigl::shader->setLightSpecular(0, glm::vec3(0, 0, 0));
 		tigl::shader->setShinyness(32.0f);
+		//fog
+		tigl::shader->enableFog(true);
+		tigl::shader->setFogExp(0.01);
 	}
 	else {
 		tigl::shader->setViewMatrix(modelFactory->_modelCameraView);
