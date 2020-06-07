@@ -12,7 +12,7 @@ ModelFileWriter::ModelFileWriter()
 void ModelFileWriter::saveModelType(ModelType type)
 {
 	std::ofstream outfile;
-	outfile.open(_fileName);
+	outfile.open(_fileName, std::fstream::app);
 	time_t curr_time;
 	tm* curr_tm;
 	char date_string[100];
