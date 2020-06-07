@@ -11,7 +11,6 @@ public:
 	void updateShapes();
 	void drawShapes();
 	std::vector<Sphere> getSpheres();
-	~ShapeFactory();
 private:
 	void addShape(Shape* shape);
 	
