@@ -14,27 +14,29 @@ std::vector<double> GravityBuddy::getDeltas(Model* model) {
 		glm::vec3 currentCoords = sphere.getPosition();
 		
 		double distance = std::sqrt(std::pow((modelPosition[0] - currentCoords[0]), 2) + std::pow((modelPosition[2] - currentCoords[2]), 2));
-		currentCoords[0] *= (sphere.getSize()/distance);
-		currentCoords[2] *= (sphere.getSize()/distance);
-		coords.push_back(currentCoords);
+		
+			currentCoords.x += ((double)sphere.getSize() / distance);
+			currentCoords.z += ((double)sphere.getSize() / distance);
+			coords.push_back(currentCoords);
+		
 		//vector now has values based on size and distance
 	}
 	if (size(coords) == 0) {
 		return deltas;
 	}
-	int c = size(coords);
+	
 	double dz = 0;
 	double dx = 0;
 	for (int i = 0; i < size(coords); i++)
 	{
 		//make one vector out of all others
-		dx += coords[i][0];
-		dz += coords[i][2];
+		dx += coords.at(i).x;
+		dz += coords.at(i).z;
 	}
 
 	//set deltas to resultant vector values
-	deltas[0] = dx;
-	deltas[1] = dz;
+	deltas[0] = dx /1000;
+	deltas[1] = dz /1000;
 	
 	return deltas;
 }

@@ -2,6 +2,7 @@
 #include <glm\ext\matrix_transform.hpp>
 #include <glm\ext\matrix_transform.hpp>
 #include "tigl.h"
+#include <iostream>
 
 Model::Model(ObjModel* objModel) {
 	_position = glm::vec3{ 0,0,0 };
@@ -16,16 +17,17 @@ void Model::draw() {
 }
 
 void Model::update() {
-	_position[2] -= _deltaY;
-	_position[0] -= _deltaX;
+	_position[0] += _deltaX;
+	_position[2] += _deltaY;
+	std::cout << _position[0] << " : " << _position[2] << std::endl;
 }
 
-void Model::setDeltaX(int dx)
+void Model::setDeltaX(double dx)
 {
 	_deltaX = dx;
 }
 
-void Model::setDeltaY(int dy)
+void Model::setDeltaY(double dy)
 {
 	_deltaY = dy;
 }

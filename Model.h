@@ -13,8 +13,8 @@ private:
 	void setModelMatrix();
 
 	//additional info for update
-	int _deltaX;
-	int _deltaY;
+	double _deltaX;
+	double _deltaY;
 public:
 	//ctor
 	Model(ObjModel* objModel);
@@ -23,8 +23,8 @@ public:
 	void update();
 
 	//extra
-	void setDeltaX(int dx);
-	void setDeltaY(int dy);
+	void setDeltaX(double dx);
+	void setDeltaY(double dy);
 	glm::vec3 getPosition();
 };
 
