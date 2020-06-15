@@ -38,7 +38,7 @@ bool camIsFree;
 ShapeFactory* shapeFactory;
 ModelFactory* modelFactory;
 
-//model stuff
+//model 
 ObjModel* objModel;
 Model* model;
 ModelFileReader* reader;
@@ -101,6 +101,15 @@ int main()
 void init()
 {
 	tigl::init();
+	//light
+	tigl::shader->enableLighting(true);
+	tigl::shader->setLightCount(1);
+	tigl::shader->setLightDirectional(0, false);
+	tigl::shader->setLightAmbient(0, glm::vec3(0.5f, 0.5f, 0.75f));
+	tigl::shader->setLightDiffuse(0, glm::vec3(0.5f, 0.5f, 0.5f));
+	tigl::shader->setLightSpecular(0, glm::vec3(0.5, 0.5, 0.5));
+	tigl::shader->setShinyness(32.0f);
+	//shader
 	tigl::shader->enableTexture(true);
 	cameraInit();
 }
@@ -110,6 +119,7 @@ void update()
 {
 	shapeFactory->updateShapes();
 	modelFactory->updateModel();
+	tigl::shader->setLightPosition(0, glm::vec3(modelFactory->_model->getPosition().x, modelFactory->_model->getPosition().y + 2, modelFactory->_model->getPosition().z));
 }
 
 void draw()
@@ -121,15 +131,6 @@ void draw()
 		freeCameraView = glm::rotate(freeCameraView, (float)glm::radians(rotation), glm::vec3(0, 1, 0));
 		tigl::shader->setProjectionMatrix(projection);
 		tigl::shader->setViewMatrix(freeCameraView);
-		//light
-		tigl::shader->enableLighting(true);
-		tigl::shader->setLightCount(1);
-		tigl::shader->setLightDirectional(0, false);
-		tigl::shader->setLightPosition(0, glm::vec3(0, 20, modelFactory->_model->getPosition().z));
-		tigl::shader->setLightAmbient(0, glm::vec3(0.5f, 0.5f, 0.75f));
-		tigl::shader->setLightDiffuse(0, glm::vec3(0.5f, 0.5f, 0.5f));
-		tigl::shader->setLightSpecular(0, glm::vec3(0, 0, 0));
-		tigl::shader->setShinyness(32.0f);
 		//fog
 		tigl::shader->enableFog(true);
 		tigl::shader->setFogExp(0.003);

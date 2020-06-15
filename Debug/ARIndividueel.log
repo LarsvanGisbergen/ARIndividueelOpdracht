@@ -1,4 +1,4 @@
 ﻿  ARIndividueel.cpp
 D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ARIndividueel.cpp(74,46): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
-D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ARIndividueel.cpp(135,32): warning C4305:  'argument': truncation from 'double' to 'float'
+D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\ARIndividueel\ARIndividueel.cpp(136,32): warning C4305:  'argument': truncation from 'double' to 'float'
   ARIndividueel.vcxproj -> D:\School 2019-2020\Periode 4\Proftaak individueel\ARIndividueel\Debug\ARIndividueel.exe

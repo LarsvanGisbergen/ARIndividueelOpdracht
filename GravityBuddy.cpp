@@ -10,9 +10,9 @@ std::vector<double> GravityBuddy::getDeltas(Model* model) {
 	std::vector<double> deltas {0.0, 0.0}; // default no change in deltas
 	std::vector<glm::vec3> coords;
 	for (Sphere sphere : _blackHoles) {
-		//translate coords to force of attraction based on size
-		glm::vec3 currentCoords = sphere.getPosition();
 		
+		glm::vec3 currentCoords = sphere.getPosition();
+		//translate coords to force of attraction based on size
 		double distanceX = modelPosition.x - currentCoords.x;
 		double distanceZ = modelPosition.z - currentCoords.z;
 		if (distanceX != 0 || distanceZ != 0) {

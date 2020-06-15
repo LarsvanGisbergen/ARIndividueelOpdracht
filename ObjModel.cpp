@@ -199,7 +199,7 @@ void ObjModel::draw()
 				tigl::Vertex vert = tigl::Vertex();
 				vert.position = vertices.at(v.position);
 				vert.texcoord = texcoords.at(v.texcoord);
-
+				vert.normal = normals.at(v.normal);
 
 
 
