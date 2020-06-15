@@ -72,9 +72,11 @@ int main()
 	modelFactory = new ModelFactory(window);
 	
 	modelFactory->makeModel(glm::vec3(0, 0, 0), 0.1, SHIP);
-	//modelFactory->makeModel(glm::vec3(0, 0, 0), 1, CAR);
-	shapeFactory->makeShape(glm::vec3(-10,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, PRISM);
-	//shapeFactory->makeShape(glm::vec3(-5, 0, 0), glm::vec4(0.1, 0.1, 0.1, 1), 1, SPHERE);
+	
+	shapeFactory->makeShape(glm::vec3(-25,0, 10), glm::vec4(0.1, 0.1, 0.1, 1), 5, PRISM);
+	shapeFactory->makeShape(glm::vec3(-5, 0, 10), glm::vec4(0.8, 0.2, 0, 1), 5, CUBE);
+	shapeFactory->makeShape(glm::vec3(10, 0, 10), glm::vec4(0, 0.3, 0.9, 1), 5, SPHERE);
+	shapeFactory->makeShape(glm::vec3(25, 0, 10), glm::vec4(0.1, 0.8, 0.1, 1), 5, PYRAMID);
 	//gravityBuddy = new GravityBuddy(shapeFactory->getSpheres());
 	//modelFactory->setGravityBuddy(gravityBuddy);
 	
@@ -130,7 +132,7 @@ void draw()
 		tigl::shader->setShinyness(32.0f);
 		//fog
 		tigl::shader->enableFog(true);
-		tigl::shader->setFogExp(0.01);
+		tigl::shader->setFogExp(0.003);
 	}
 	else {
 		tigl::shader->setViewMatrix(modelFactory->_modelCameraView);

@@ -25,7 +25,6 @@ void Pyramid::update()
 		_rotation += 0.01;
 	}
 
-	std::cout << _rotation << std::endl;
 }
 
 void Pyramid::draw()
