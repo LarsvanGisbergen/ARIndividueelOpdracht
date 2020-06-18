@@ -201,8 +201,6 @@ void ObjModel::draw()
 				vert.texcoord = texcoords.at(v.texcoord);
 				vert.normal = normals.at(v.normal);
 
-
-
 				vert.color = glm::vec4(1, 1, 1, 1);
 				tigl::addVertex(vert);
 

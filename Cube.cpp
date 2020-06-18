@@ -27,42 +27,43 @@ void Cube::draw() {
 	model = glm::scale(model, glm::vec3((float)_size, (float)_size, (float)_size));
 	tigl::shader->setModelMatrix(model);
 	tigl::begin(GL_QUADS);
-
+	
+	
 	//front face
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, 1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 1), _color, glm::vec3(1, 0, 1)));
 
 	//left face
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, -1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, -1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 1), _color, glm::vec3(1, 0, 1)));
 
 	//right face
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, 1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, -1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, -1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 1), _color, glm::vec3(-1, 0, 1)));
 
 	//top face
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, -1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, -1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, 1), _color, glm::vec3(-1, 0, 1)));
 
 	//bottom face
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, -1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, -1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 1), _color, glm::vec3(-1, 0, 1)));
 
 	//back face
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, -1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, -1), _color, glm::vec3(-1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, -1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, -1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, -1), _color, glm::vec3(-1, 0, 1)));
 
 	tigl::end();
 }
