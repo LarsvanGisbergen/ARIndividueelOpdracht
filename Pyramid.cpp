@@ -36,21 +36,21 @@ void Pyramid::draw()
 	tigl::shader->setModelMatrix(model);
 
 	tigl::begin(GL_TRIANGLES);
-	tigl::addVertex(Vertex::PC(glm::vec3(0, 1, 0), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0, 1, 0), _color,glm::vec3(1,0,1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 1), _color, glm::vec3(-1, 0, 1)));
 
-	tigl::addVertex(Vertex::PC(glm::vec3(0, 1, 0), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0, -1, -1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0, 1, 0), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0, -1, -1), _color, glm::vec3(0, -1, 1)));
 
-	tigl::addVertex(Vertex::PC(glm::vec3(0, 1, 0), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0, 1, 0), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0, -1, -1), _color, glm::vec3(0, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 1), _color, glm::vec3(-1, 0, 1)));
 
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0, -1, -1), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 1), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 1), _color, glm::vec3(1, 0, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0, -1, -1), _color, glm::vec3(0, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 1), _color, glm::vec3(-1, 0, 1)));
 
 	tigl::end();
 }
