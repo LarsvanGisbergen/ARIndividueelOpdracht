@@ -35,65 +35,65 @@ void Prism::draw()
 	tigl::shader->setModelMatrix(model);
 	tigl::begin(GL_POLYGON);
 	// Draw the First from square,Square 1.
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, -1, 1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, -1, 1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, 1, 1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, 1, 1.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, -1, 1.5), _color, glm::vec3(1, 1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, -1, 1.5), _color, glm::vec3(-1, 1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, 1, 1.5), _color, glm::vec3(1, 1, -1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, 1, 1.5), _color, glm::vec3(1, 1, -1)));
 	//tigl::end();
 
 	
 	//tigl::begin(GL_POLYGON);// Draw the right from the front the square.
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, -1, 1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, 0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, 1, 1.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, -1, 1.5), _color, glm::vec3(-1, 1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 0.5), _color, glm::vec3(-1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, 0.5), _color, glm::vec3(-1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, 1, 1.5), _color, glm::vec3(1, 1, -1)));
 	//tigl::end();
 
 
 	//tigl::begin(GL_POLYGON);// Draw the straight square from right.
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, 0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, -0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, -0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, 0.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, 0.5), _color, glm::vec3(1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, -0.5), _color, glm::vec3(1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, -0.5), _color, glm::vec3(1, -1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, 0.5), _color, glm::vec3(1, -1, 0)));
 	//tigl::end();
 
 
 	//tigl::begin(GL_POLYGON);
-	tigl::addVertex(Vertex::PC(glm::vec3(1, -1, -0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, -1, -1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, 1, -1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(1, 1, -0.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, -1, -0.5), _color, glm::vec3(1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, -1, -1.5), _color, glm::vec3(1, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, 1, -1.5), _color, glm::vec3(1, 1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(1, 1, -0.5), _color, glm::vec3(1, -1, 0)));
 	//tigl::end();
 
 
 	//tigl::begin(GL_POLYGON);// Draw the behind square.
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, -1, -1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, -1, -1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, 1, -1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(0.5, 1, -1.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, -1, -1.5), _color, glm::vec3(1, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, -1, -1.5), _color, glm::vec3(-1, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, 1, -1.5), _color, glm::vec3(-1, 1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(0.5, 1, -1.5), _color, glm::vec3(1, 1, 1)));
 	//tigl::end();
 
 
 	//tigl::begin(GL_POLYGON);//draw the left suare.
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, -1, -1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, -0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, -0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, 1, -1.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, -1, -1.5), _color, glm::vec3(-1, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, -0.5), _color, glm::vec3(1, -1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, -0.5), _color, glm::vec3(1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, 1, -1.5), _color, glm::vec3(-1, 1, 1)));
 	//tigl::end();
 
 	//tigl::begin(GL_POLYGON);// Draw the square next to the left.
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, -0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, 0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, -0.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, -0.5), _color, glm::vec3(1, -1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 0.5), _color, glm::vec3(1, -1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, 0.5), _color, glm::vec3(1, 1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, -0.5), _color, glm::vec3(1, 1, 0)));
 	//tigl::end();
 
 
 	//tigl::begin(GL_POLYGON);// Draw the square next to the left.
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, -1, 0.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, -1, 1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-0.5, 1, 1.5), _color));
-	tigl::addVertex(Vertex::PC(glm::vec3(-1, 1, 0.5), _color));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, -1, 0.5), _color, glm::vec3(1, -1, 0)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, -1, 1.5), _color, glm::vec3(1, 1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-0.5, 1, 1.5), _color, glm::vec3(1, -1, 1)));
+	tigl::addVertex(Vertex::PCN(glm::vec3(-1, 1, 0.5), _color, glm::vec3(1, -1, 0)));
 	tigl::end();
 	
 
