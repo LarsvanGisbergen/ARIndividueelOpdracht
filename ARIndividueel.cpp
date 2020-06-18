@@ -119,7 +119,8 @@ void update()
 {
 	shapeFactory->updateShapes();
 	modelFactory->updateModel();
-	tigl::shader->setLightPosition(0, glm::vec3(modelFactory->_model->getPosition().x, modelFactory->_model->getPosition().y + 2, modelFactory->_model->getPosition().z));
+	tigl::shader->setLightPosition(0, glm::vec3(0, 10, 10));
+	//tigl::shader->setLightPosition(0, glm::vec3(modelFactory->_model->getPosition().x, modelFactory->_model->getPosition().y + 2, modelFactory->_model->getPosition().z));
 }
 
 void draw()

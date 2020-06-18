@@ -54,12 +54,10 @@ void Sphere::draw()
 			double lng = 2 * M_PI * (double)(j-1) / longs;
 			double x = cos(lng);
 			double y = sin(lng);
+		
+			tigl::addVertex(Vertex::PCN(glm::vec3(r * x * zr0, r * y * zr0, r * z0), _color, glm::vec3(1,-1,1)));
+			tigl::addVertex(Vertex::PCN(glm::vec3(r * x * zr1, r * y * zr1, r * z1), _color, glm::vec3(1,-1,1)));
 			
-			tigl::addVertex(Vertex::PC(glm::vec3(r * x * zr0, r * y * zr0, r * z0), _color));
-			glVertex3f(r * x * zr0, r * y * zr0, r * z0);
-
-			tigl::addVertex(Vertex::PC(glm::vec3(r * x * zr1, r * y * zr1, r * z1), _color));
-			glVertex3f(r * x * zr1, r * y * zr1, r * z1);
 		}
 		tigl::end();
 	}
